@@ -22,6 +22,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -32,8 +35,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
     //Exo player
-    ext.ExoPlayerVersion = 'r2.5.4'
-    //implementation 'com.google.android.exoplayer:exoplayer:r2.5.4'
+    ext.ExoPlayerVersion = '2.11.5'
     implementation "com.google.android.exoplayer:exoplayer-core:$ExoPlayerVersion"
     implementation "com.google.android.exoplayer:exoplayer-dash:$ExoPlayerVersion"
     implementation "com.google.android.exoplayer:exoplayer-ui:$ExoPlayerVersion"
