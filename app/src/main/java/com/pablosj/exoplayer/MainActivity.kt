@@ -40,16 +40,16 @@ class MainActivity : AppCompatActivity(){
             .build()
         playerView.player = player
 
-        val uri: Uri = Uri.parse("http://storage.googleapis.com/exoplayer-test-media-0/play.mp3")
+        val uri: Uri = Uri.parse(getString(R.string.media_url_mp4))
         val mediaSource: MediaSource = buildMediaSource(uri)
-        player!!.playWhenReady = playWhenReady
+        player!!.playWhenReady = true
         player!!.seekTo(currentWindow, playbackPosition)
         player!!.prepare(mediaSource, false, false)
     }
 
     private fun buildMediaSource(uri: Uri): MediaSource {
         val dataSourceFactory: DataSource.Factory =
-            DefaultDataSourceFactory(this, "exoplayer-codelab")
+            DefaultDataSourceFactory(this, "pabloSj")
         return ProgressiveMediaSource.Factory(dataSourceFactory)
             .createMediaSource(uri)
     }
